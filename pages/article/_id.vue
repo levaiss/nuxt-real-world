@@ -1,10 +1,10 @@
 <template>
-  <div>Post</div>
+  <div>Article</div>
 </template>
 
 <script>
 export default {
-  name: 'Post',
+  name: 'Article',
   mounted () {
     console.log(this.$route.params.id)
   }

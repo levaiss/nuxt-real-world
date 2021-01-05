@@ -2,9 +2,11 @@
   <v-app light>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      fixed
       app
+      absolute
+      right
+      bottom
+      temporary
     >
       <v-list>
         <v-list-item
@@ -24,11 +26,15 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      fixed
       app
+      fixed
+      elevate-on-scroll
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-container>
+        <v-toolbar-title class="display-1 font-weight-bold cyan--text" v-text="title" />
+        <v-spacer />
+        <!--      <v-app-bar-nav-icon @click.stop="toggleDrawer" />-->
+      </v-container>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -61,8 +67,12 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      title: 'Nuxt real world'
+      title: 'conduit'
+    }
+  },
+  methods: {
+    toggleDrawer () {
+      this.drawer = !this.drawer
     }
   }
 }

@@ -1,7 +1,7 @@
 export default function ({ $axios, redirect }, inject) {
   const api = $axios.create()
 
-  api.setBaseURL('https://jsonplaceholder.typicode.com')
+  api.setBaseURL('https://conduit.productionready.io/api')
 
   api.onRequest((config) => {
     console.log('Making request to ' + config.url)
